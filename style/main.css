@@ -1,0 +1,10 @@
+
+@import url(image.css);
+
+body {
+  padding: 100px;
+}
+
+.demo {
+  display: flex;
+}

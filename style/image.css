@@ -1,0 +1,63 @@
+
+.lite-image {
+  position: relative;
+  display: inline-block;
+  transition-property: opacity;
+  transition-duration: 300ms;
+  background: rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lite-image img {
+  display: block;
+}
+
+.lite-image i {
+  color: #fff;
+}
+
+.lite-image .image-reload {
+  height: 22px;
+  width: 22px;
+  line-height: 22px;
+
+  position: absolute;
+  right: -40px;
+  bottom: 0;
+
+  background: #FF7043;
+  border-radius: 50%;
+  color: #fff;
+
+  font-size: 14px;
+  text-align: center;
+
+  cursor: pointer;
+}
+
+.lite-image .image-reload:hover {
+  background: lighten(#FF7043, 10%);
+}
+
+.lite-image .image-loader {
+  height: 20px;
+  width: 20px;
+  line-height: 20px;
+
+  font-size: 20px;
+  text-align: center;
+
+  animation: refresh 1s linear infinite;
+}
+
+@keyframes refresh {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
