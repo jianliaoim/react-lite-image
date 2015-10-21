@@ -22,22 +22,24 @@ module.exports = React.createClass
   renderImageLoading: ->
     div className: 'section',
       div className: 'title', 'Image Downloading'
-      Image src: onlineImage, width: 400, height: 300
+      if @state.showLocalImage
+        Image src: onlineImage, width: 400, height: 300
 
   renderImageLocal: ->
     div className: 'section',
       div className: 'title', 'Local Image'
-      button className: 'button is-default is-small', onClick: @toggleLocal, 'Render Local Image'
       if @state.showLocalImage
         Image width: 225, height: 225, src: localImage
 
   renderImageFailed: ->
     div className: 'section',
       div className: 'title', 'Image Failed'
-      Image src: failedImage, width: 80, height: 80
+      if @state.showLocalImage
+        Image src: failedImage, width: 80, height: 80
 
   render: ->
     div className: 'app-page',
+      button className: 'button is-default is-small', onClick: @toggleLocal, 'Show/hide'
       @renderImageLoading()
       @renderImageLocal()
       @renderImageFailed()
