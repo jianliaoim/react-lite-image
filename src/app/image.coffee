@@ -1,20 +1,21 @@
 
 React = require 'react'
 
-div = React.createFactory 'div'
-i = React.createFactory 'i'
-img = React.createFactory 'img'
-span = React.createFactory 'span'
-
-T = React.PropTypes
+{div, span, img, i} = React.DOM
 
 module.exports = React.createClass
   displayName: 'lite-image'
 
   propTypes:
-    onClick: T.func
-    onLoaded: T.func
-    src: T.string.isRequired
+    onClick: React.PropTypes.func
+    onLoaded: React.PropTypes.func
+    src: React.PropTypes.string.isRequired
+    width: React.PropTypes.number
+    height: React.PropTypes.number
+
+  getDetaultProps: ->
+    width: 'auto'
+    height: 'auto'
 
   getInitialState: ->
     stage: 'loading'

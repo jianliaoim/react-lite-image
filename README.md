@@ -1,10 +1,14 @@
 
-CoffeeScript Webpack Starter
+React Image Component
 ----
 
-React project tempate at Talk.
-
 Demo http://ui.talk.ai/react-lite-image/
+
+Features:
+
+* show loading, gray placeholder with fixed size
+* fade in after loading image
+* show reload button after failed fetching
 
 ### Usage
 

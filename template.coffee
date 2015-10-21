@@ -25,12 +25,10 @@ module.exports = (data) ->
         script src: data.main, defer: true
       body null,
         div class: 'intro',
-          div class: 'title', "This is a demo of Webpack usage."
-          line "Open Console to see how it loads."
           div null,
-            span null, "Read more at "
-            a href: 'http://github.com/teambition/coffee-webpack-starter',
-              'github.com/teambition/coffee-webpack-starter'
+            span null, "React Image Component, read more at "
+            a href: 'http://github.com/teambition/react-lite-image',
+              'github.com/teambition/react-lite-image'
             span null, '.'
         div class: 'demo',
           React.renderToString Page()
