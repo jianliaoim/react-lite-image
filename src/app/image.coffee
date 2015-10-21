@@ -42,7 +42,6 @@ module.exports = React.createClass
     @imgEl.onload = @onImageLoad
     @imgEl.onerror = @onImageError
     @imgEl.src = src
-    console.log 'src', src
 
   loadDataUrl: (src) ->
     @setState stage: 'done'
