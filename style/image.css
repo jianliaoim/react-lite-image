@@ -4,7 +4,7 @@
   display: inline-block;
   transition-property: opacity;
   transition-duration: 300ms;
-  background: rgba(0, 0, 0, 0.25);
+  background: hsla(0, 0%, 0%, 0.1);
 
   display: flex;
   align-items: center;
@@ -16,7 +16,7 @@
 }
 
 .lite-image i {
-  color: #fff;
+  color: black;
 }
 
 .lite-image .image-reload {

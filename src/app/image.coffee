@@ -82,7 +82,9 @@ module.exports = React.createClass
       i className: 'icon icon-refresh'
 
   renderImage: ->
-    img src: @props.src, onClick: @onClick
+    img src: @props.src, onClick: @onClick, style:
+      width: @props.width
+      height: @props.height
 
   renderError: ->
     i className: 'image-reload icon icon-refresh', onClick: @onReloadImage

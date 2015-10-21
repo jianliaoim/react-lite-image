@@ -7,7 +7,7 @@ Image = React.createFactory require './image'
 
 localImage = require './local-image-url'
 
-onlineImage = 'http://api.adorable.io/avatars/285/abott@adorable.io.png'
+onlineImage = 'https://d13yacurqjgara.cloudfront.net/users/159888/screenshots/2301596/clearskies-01.png'
 failedImage = 'asdf'
 
 module.exports = React.createClass
@@ -22,7 +22,7 @@ module.exports = React.createClass
   renderImageLoading: ->
     div className: 'section',
       div className: 'title', 'Image Downloading'
-      Image src: onlineImage, width: 285, height: 285
+      Image src: onlineImage, width: 400, height: 300
 
   renderImageLocal: ->
     div className: 'section',
