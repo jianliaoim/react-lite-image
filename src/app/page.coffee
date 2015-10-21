@@ -14,7 +14,7 @@ module.exports = React.createClass
   displayName: 'app-page'
 
   getInitialState: ->
-    showLocalImage: false
+    showLocalImage: true
 
   toggleLocal: ->
     @setState showLocalImage: not @state.showLocalImage
