@@ -8,7 +8,7 @@ Image = React.createFactory require './image'
 localImage = require './local-image-url'
 
 onlineImage = 'https://d13yacurqjgara.cloudfront.net/users/159888/screenshots/2301596/clearskies-01.png'
-failedImage = 'asdf'
+failedImage = 'https://dribbble.com/shots/2289888-Prototype'
 
 module.exports = React.createClass
   displayName: 'app-page'

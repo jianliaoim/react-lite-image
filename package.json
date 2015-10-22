@@ -4,6 +4,7 @@
   "description": "Image component",
   "main": "lib/app/image.js",
   "dependencies": {
+    "classnames": "^2.2.0",
     "react": "^0.13.1"
   },
   "devDependencies": {
