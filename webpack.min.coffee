@@ -17,8 +17,8 @@ module.exports =
   module:
     loaders: [
       {test: /\.coffee$/, loader: 'coffee'}
-      {test: /\.less$/, loader: ExtractTextPlugin.extract('style-loader', 'css!autoprefixer!less')}
-      {test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css!autoprefixer')}
+      {test: /\.less$/, loader: ExtractTextPlugin.extract('style-loader', 'css?importLoaders=1!autoprefixer!less')}
+      {test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css?importLoaders=1!autoprefixer')}
       {test: /\.(eot|woff|woff2|ttf|svg|png)((\?|\#)[\?\#\w\d_-]+)?$/, loader: "url", query: {limit: 100, name: fontName}}
     ]
   plugins: [

@@ -58,11 +58,11 @@ module.exports = React.createClass
   onImageLoad: (event) ->
     @setState stage: 'done'
     @onLoaded()
-    # @destroyImage()
+    @destroyImage()
 
   onImageError: (event) ->
     @setState stage: 'error'
-    # @destroyImage()
+    @destroyImage()
 
   # external events
 

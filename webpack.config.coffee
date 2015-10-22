@@ -21,8 +21,8 @@ module.exports =
   module:
     loaders: [
       {test: /\.coffee$/, loader: 'react-hot!coffee'}
-      {test: /\.less$/, loader: 'style!css!less'}
-      {test: /\.css$/, loader: 'style!css!autoprefixer'}
+      {test: /\.less$/, loader: 'style!css?importLoaders=1!autoprefixer!less'}
+      {test: /\.css$/, loader: 'style!css?importLoaders=1!autoprefixer'}
       {test: /\.(eot|woff|woff2|ttf|svg|png)((\?|\#)[\?\#\w\d_-]+)?$/, loader: "url", query: {limit: 100, name: fontName}}
     ]
   plugins: [
