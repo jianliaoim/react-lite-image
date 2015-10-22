@@ -1,5 +1,6 @@
 
 React = require 'react'
+classnames = require 'classnames'
 
 {div, span, img, i} = React.DOM
 
@@ -78,25 +79,36 @@ module.exports = React.createClass
   # renderers
 
   renderLoading: ->
-    div className: 'image-loader',
-      i className: 'icon icon-refresh'
+    className = classnames 'loading-layer',
+      'is-active': @state.stage is 'loading'
+
+    div className: className,
+      div className: 'image-spinner',
+        div className: 'cube1'
+        div className: 'cube2'
 
   renderImage: ->
-    img src: @props.src, onClick: @onClick, style:
+    className = classnames 'image-layer',
+      'is-active': @state.stage is 'done'
+    style =
       width: @props.width
       height: @props.height
 
+    img className: className, src: @props.src, onClick: @onClick, style: style
+
   renderError: ->
-    i className: 'image-reload icon icon-refresh', onClick: @onReloadImage
+    className = classnames 'error-layer',
+      'is-active': @state.stage is 'error'
+
+    div className: className,
+      i className: 'image-reloader icon icon-refresh', onClick: @onReloadImage
 
   render: ->
     style =
       width: @props.width
       height: @props.height
-      opacity: if @state.stage is 'loading' then 0.4 else 1
 
     div className: 'lite-image', style: style,
-      switch @state.stage
-        when 'loading' then @renderLoading()
-        when 'done' then @renderImage()
-        when 'error' then @renderError()
+      @renderLoading()
+      @renderError()
+      @renderImage()
