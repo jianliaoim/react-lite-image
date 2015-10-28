@@ -66,7 +66,8 @@ module.exports = React.createClass
 
   # external events
 
-  onClick: ->
+  onClick: (event) ->
+    event.stopPropagation()
     @props.onClick?()
 
   onLoaded: ->
