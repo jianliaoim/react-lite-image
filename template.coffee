@@ -1,6 +1,7 @@
 
 stir = require 'stir-template'
 React = require 'react'
+ReactDOM = require 'react-dom/server'
 
 Page = React.createFactory require './src/app/page'
 
@@ -31,4 +32,4 @@ module.exports = (data) ->
               'github.com/teambition/react-lite-image'
             span null, '.'
         div class: 'demo',
-          React.renderToString Page()
+          ReactDOM.renderToString Page()
