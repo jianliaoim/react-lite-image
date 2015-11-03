@@ -2,7 +2,6 @@
 /build
 /gulpfile.coffee
 /webpack.*
-/index.html
 /lib/app/local*
 /src
 /template.coffee

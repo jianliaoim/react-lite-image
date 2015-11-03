@@ -18,10 +18,10 @@ gulp.task 'rsync', (cb) ->
   wrapper = require 'rsyncwrapper'
   wrapper.rsync
     ssh: true
-    src: ['index.html', 'build', 'src']
+    src: ['build/*']
     recursive: true
     args: ['--verbose']
-    dest: 'talk-ui:/teambition/server/talk-ui/react-lite-image/'
+    dest: 'talk-ui:/teambition/server/talk-ui/react-lite-image'
     deleteAll: true
   , (error, stdout, stderr, cmd) ->
     if error?
@@ -31,16 +31,25 @@ gulp.task 'rsync', (cb) ->
     cb()
 
 gulp.task 'html', (cb) ->
+  if require.extensions?
+    fs = require 'fs'
+    require.extensions['.png'] = (module, filename) ->
+      content = fs.readFileSync filename
+      buf = new Buffer content
+      module.exports = "data:image/png;base64," + buf.toString('base64')
+      return module
+
   html = require('./template')
   fs = require('fs')
   assets = undefined
+
   unless env.dev
     assets = require('./build/assets.json')
-    env.main = './build/' + assets.main[0]
-    env.vendor = './build/' + assets.vendor
-    env.style = './build/' + assets.main[1]
+    env.main = assets.main[0]
+    env.vendor = assets.vendor
+    env.style = assets.main[1]
 
-  fs.writeFile 'index.html', html(env), cb
+  fs.writeFile 'build/index.html', html(env), cb
 
 gulp.task 'del', (cb) ->
   del = require('del')
