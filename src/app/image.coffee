@@ -13,6 +13,7 @@ module.exports = React.createClass
     src: React.PropTypes.string.isRequired
     width: React.PropTypes.number
     height: React.PropTypes.number
+    style: React.PropTypes.object
 
   getDetaultProps: ->
     width: 'auto'
@@ -105,9 +106,9 @@ module.exports = React.createClass
       i className: 'image-reloader icon icon-refresh', onClick: @onReloadImage
 
   render: ->
-    style =
-      width: @props.width
-      height: @props.height
+    style = @props.style or {}
+    style.width = @props.width
+    style.height = @props.height
 
     div className: 'lite-image', style: style,
       @renderLoading()
