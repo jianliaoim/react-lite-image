@@ -27,8 +27,8 @@
 .lite-image .error-layer.is-active {
   position: absolute;
   left: 0;
+  right: 40px;
   top: 0;
-  width: 100%;
   height: 100%;
   background-color: hsla(0,0%,0%,0.1);
   display: block;
