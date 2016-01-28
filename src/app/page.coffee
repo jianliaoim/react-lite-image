@@ -21,32 +21,35 @@ module.exports = React.createClass
   toggleLocal: ->
     @setState showLocalImage: not @state.showLocalImage
 
+  onClick: ->
+    console.log 'clicked image'
+
   renderImageLoading: ->
     div className: 'section',
       div className: 'title', 'Image Downloading'
       if @state.showLocalImage
-        Image src: onlineImage, width: 400, height: 300
+        Image src: onlineImage, width: 400, height: 300, onClick: @onClick
 
   renderImageLocal: ->
     div className: 'section',
       div className: 'title', 'Local Image'
       if @state.showLocalImage
-        Image width: 225, height: 225, src: localImage
+        Image width: 225, height: 225, src: localImage, onClick: @onClick
 
   renderImageFailed: ->
     div className: 'section',
       div className: 'title', 'Image Failed'
       if @state.showLocalImage
-        Image src: failedImage, width: 80, height: 80
+        Image src: failedImage, width: 80, height: 80, onClick: @onClick
 
   renderImageSpecial: ->
     div className: 'section',
       div className: 'title', 'Thin image'
-        Image width: 14, height: 298, src: thinImage
+        Image width: 14, height: 298, src: thinImage, onClick: @onClick
       div className: 'title', 'narrow image'
-        Image width: 179, height: 16, src: narrowImage
+        Image width: 179, height: 16, src: narrowImage, onClick: @onClick
       div className: 'title', 'narrow image broken'
-        Image width: 179, height: 16, src: failedImage
+        Image width: 179, height: 16, src: failedImage, onClick: @onClick
 
   render: ->
     div className: 'app-page',
