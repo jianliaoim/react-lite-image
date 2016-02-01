@@ -57,8 +57,9 @@ module.exports = React.createClass
   # internal event
 
   onImageLoad: (event) ->
-    @setState stage: 'done'
-    @onLoaded()
+    if @isMounted()
+      @setState stage: 'done'
+      @onLoaded()
     @destroyImage()
 
   onImageError: (event) ->

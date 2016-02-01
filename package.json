@@ -31,7 +31,8 @@
     "webpack-dev-server": "^1.8.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp build && gulp script",
+    "dev": "gulp html && webpack-dev-server --hot"
   },
   "keywords": [
     "react-component"
