@@ -104,7 +104,7 @@ module.exports = React.createClass
       'is-active': @state.stage is 'error'
 
     div className: className,
-      i className: 'image-reloader icon icon-refresh', onClick: @onReloadImage
+      i className: 'image-reloader ti ti-refresh', onClick: @onReloadImage
 
   render: ->
     style = @props.style or {}
